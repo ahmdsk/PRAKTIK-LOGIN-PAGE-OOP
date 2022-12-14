@@ -24,33 +24,20 @@
         </ul>
     </div>
     <div class="container mt-4">
-        <div class="card">
-            <div class="card-header">
-                <h3>Data User</h3>
-            </div>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{asset('user.png')}}" class="img-fluid rounded-start" alt="Profile Users">
+          </div>
+          <div class="col-md-8">
             <div class="card-body">
-                <table class="table" id="myTable">
-                    <thead>
-                        <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">No. Telpon</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($users as $no => $u)
-                        <tr>
-                            <th scope="row">{{$no+1}}</th>
-                            <td>{{$u->nama}}</td>
-                            <td>{{$u->email}}</td>
-                            <td>{{$u->no_telp}}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+              <h5 class="card-title">{{auth()->user()->nama}}</h5>
+              <p class="card-text">{{auth()->user()->email}}</p>
+              <p class="card-text"><small class="text-muted">{{auth()->user()->no_telp}}</small></p>
             </div>
+          </div>
         </div>
+      </div>
     </div>
 </main>
 @endsection
